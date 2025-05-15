@@ -5,6 +5,6 @@ An example of how to build a multi-arch EE image, based on information from [How
 1. Create the EE context using the `ansible-builder create` command
 2. Create a container image manifest for the EE using the `podman manifest` command, then build the EEs using podman.
 
-When building the EE image for a non-native architecture, podman uses the QEMU emulator by default, and the required packages are [not available on Red Hat Enterprise Linux](https://access.redhat.com/solutions/5654221).  The multi-arch build will work on a Fedora system, as well as Podman Desktop on MacOS.
+When building the EE image for a non-native architecture, podman uses the QEMU emulator by default, and the required packages are [not available on Red Hat Enterprise Linux](https://access.redhat.com/solutions/5654221).  The multi-arch build will work on a Fedora system, as well as [Podman Desktop](https://podman-desktop.io/) on MacOS.
 
 The demo EE definition will pull in certified collections from Red Hat Automation Hub, so an Automation Hub token is required when creating the EE.

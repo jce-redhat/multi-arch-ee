@@ -36,7 +36,7 @@ podman build --platform linux/amd64,linux/arm64 \
   --build-arg ANSIBLE_GALAXY_SERVER_VALIDATED_TOKEN \
   --manifest quay.io/jce-redhat/multi-arch-ee:${_tag} . \
   | tee podman-build.log
-popd
+popd > /dev/null
 
 # inspect manifest content
 #podman manifest inspect quay.io/jce-redhat/multi-arch-ee:${_tag}

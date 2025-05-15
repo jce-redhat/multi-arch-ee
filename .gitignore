@@ -1,0 +1,5 @@
+ansible-builder.log
+ansible-navigator.log
+podman-build.log
+context/
+tmp/

@@ -1,0 +1,20 @@
+---
+collections:
+  - name: amazon.aws
+    version: ">=9.3.0"
+  - name: ansible.controller
+    version: ">=4.6.0"
+  - name: ansible.posix
+    version: ">=1.6.2"
+  - name: cloud.terraform
+    version: ">=3.0.0"
+  - name: community.crypto
+    version: ">=2.26.0"
+  - name: community.general
+    version: ">=10.0.0"
+  - name: community.hashi_vault
+    version: ">=6.0.0"
+  - name: containers.podman
+    version: ">=1.16.0"
+
+...

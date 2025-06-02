@@ -37,17 +37,13 @@ for arch in amd64 arm64
 do
     _baseurl=https://mirror.openshift.com/pub/openshift-v4/${arch}/dependencies/rpms/4.18-el9-beta/
     _rpm=$(curl -s ${_baseurl} | grep openshift-clients-4 | grep href | cut -d\" -f2)
-    case ${arch} in
-        amd64) export OPENSHIFT_CLIENT="${_baseurl}${_rpm}" ;;
-        arm64) export OPENSHIFT_CLIENT="${_baseurl}${_rpm}" ;;
-    esac
 
     # build EE for multiple architectures from the EE context
     pushd ./context/ > /dev/null
     podman build --platform linux/${arch} \
       --build-arg ANSIBLE_GALAXY_SERVER_CERTIFIED_TOKEN \
       --build-arg ANSIBLE_GALAXY_SERVER_VALIDATED_TOKEN \
-      --build-arg OPENSHIFT_CLIENT \
+      --build-arg OPENSHIFT_CLIENT_RPM="${_baseurl}${_rpm}" \
       --manifest quay.io/jce-redhat/apd-ee-25:${_tag} . \
       | tee podman-build-${arch}.log
     popd > /dev/null

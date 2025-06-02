@@ -1,5 +1,7 @@
 ansible-builder.log
 ansible-navigator.log
-podman-build.log
+**/podman-build.log
+**/podman-build-amd64.log
+**/podman-build-arm64.log
 context/
 tmp/
